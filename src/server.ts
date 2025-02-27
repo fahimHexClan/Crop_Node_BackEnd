@@ -4,6 +4,7 @@ import cropRoutes from "./Routes/cropRoutes";  // Ensure correct path
 import equipmentRoutes from "./Routes/equipmentRoutes";  // Include Equipment Routes
 import fieldRoutes from "./Routes/FieldRoutes";
 import monitoringRoutes from "./Routes/monitoringRoutes";
+import vehicleRoutes from "./Routes/vehicleRoutes";
 
 
 const app = express();
@@ -15,6 +16,7 @@ app.use("/crops", cropRoutes);
 app.use("/equipment", equipmentRoutes);
 app.use("/fields", fieldRoutes);
 app.use("/monitoring", monitoringRoutes);
+app.use("/vehicle", vehicleRoutes);
 
 
 const PORT = 3000;

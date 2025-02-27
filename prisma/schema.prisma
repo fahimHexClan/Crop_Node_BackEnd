@@ -12,3 +12,45 @@ model User {
   name  String
   email String @unique
 }
+
+model Crop {
+  id             Int    @id @default(autoincrement()) // UUID as Primary Key
+  cropId         String @unique // Ensures uniqueness
+  category       String
+  commonName     String
+  image          String
+  scientificName String
+  season         String
+  fieldId        String
+  logId          String
+}
+
+model Equipment {
+  id              Int    @id @default(autoincrement())
+  eqiipmentId     String @unique
+  equipmentName   String
+  equipmentStatus String
+  equipmentType   String
+  fieldId         String
+  staffId         String
+}
+
+model Field {
+  id            Int    @id @default(autoincrement())
+  fieldId       String @unique
+  fieldName     String
+  fieldLocation String
+  extentSize    String
+  fieldImage1   String
+  fieldImage2   String
+  logId         String
+  staffId       String
+}
+
+model Monitoring {
+  id                   Int    @id @default(autoincrement())
+  monitoringId         String @unique
+  monitoringDate       String
+  monitoringLogDetails String
+  monitoringImage      String
+}

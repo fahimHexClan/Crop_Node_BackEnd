@@ -54,3 +54,14 @@ model Monitoring {
   monitoringLogDetails String
   monitoringImage      String
 }
+
+model Vehicle {
+  id                 Int    @id @default(autoincrement())
+  vehicleId          String @unique
+  vehicleCategory    String
+  fuelType           String
+  licensePlateNumber String @unique
+  vehicleRemarks     String
+  vehicleStatus      String
+  staffId            String
+}

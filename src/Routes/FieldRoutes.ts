@@ -3,11 +3,9 @@ import { FieldController } from "../Controller/FieldController";
 
 const router = express.Router();
 
-// 🌱 CRUD Routes
 router.post("/", FieldController.create);
 router.get("/", FieldController.getAll);
-//router.get("/:id", FieldController.getById);
-router.put("/:id", FieldController.update);
-router.delete("/:id", FieldController.delete);
+router.put("/:fieldId", FieldController.update);
+router.delete("/:fieldId", FieldController.delete);
 
 export default router;

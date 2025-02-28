@@ -7,15 +7,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    Int    @id @default(autoincrement())
-  name  String
-  email String @unique
-}
-
-model Crop {
-  id             Int    @id @default(autoincrement()) // UUID as Primary Key
-  cropId         String @unique // Ensures uniqueness
+model crop {
+  id             Int    @id @default(autoincrement())
+  cropId         String @unique(map: "Crop_cropId_key")
   category       String
   commonName     String
   image          String
@@ -25,19 +19,19 @@ model Crop {
   logId          String
 }
 
-model Equipment {
+model equipment {
   id              Int    @id @default(autoincrement())
-  eqiipmentId     String @unique
   equipmentName   String
   equipmentStatus String
   equipmentType   String
   fieldId         String
   staffId         String
+  eqiipmentId     String @unique(map: "Equipment_eqiipmentId_key")
 }
 
-model Field {
+model field {
   id            Int    @id @default(autoincrement())
-  fieldId       String @unique
+  fieldId       String @unique(map: "Field_fieldId_key")
   fieldName     String
   fieldLocation String
   extentSize    String
@@ -47,20 +41,26 @@ model Field {
   staffId       String
 }
 
-model Monitoring {
+model monitoring {
   id                   Int    @id @default(autoincrement())
-  monitoringId         String @unique
+  monitoringId         String @unique(map: "Monitoring_monitoringId_key")
   monitoringDate       String
   monitoringLogDetails String
   monitoringImage      String
 }
 
-model Vehicle {
+model user {
+  id    Int    @id @default(autoincrement())
+  name  String
+  email String @unique(map: "User_email_key")
+}
+
+model vehicle {
   id                 Int    @id @default(autoincrement())
-  vehicleId          String @unique
+  vehicleId          String @unique(map: "Vehicle_vehicleId_key")
   vehicleCategory    String
   fuelType           String
-  licensePlateNumber String @unique
+  licensePlateNumber String @unique(map: "Vehicle_licensePlateNumber_key")
   vehicleRemarks     String
   vehicleStatus      String
   staffId            String

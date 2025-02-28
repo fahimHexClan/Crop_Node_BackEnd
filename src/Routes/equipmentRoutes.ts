@@ -3,11 +3,9 @@ import { EquipmentController } from "../Controller/EquipmentController";
 
 const router = express.Router();
 
-// 🌱 CRUD Routes
 router.post("/", EquipmentController.create);
 router.get("/", EquipmentController.getAll);
-//router.get("/:id", EquipmentController.getById);
-router.put("/:id", EquipmentController.update);
-router.delete("/:id", EquipmentController.delete);
+router.put("/:eqiipmentId", EquipmentController.update);
+router.delete("/:eqiipmentId", EquipmentController.delete);
 
 export default router;

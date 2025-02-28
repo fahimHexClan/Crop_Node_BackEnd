@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { VehicleService } from "../service/VehicleService";
 
 export class VehicleController {
-    // ✅ Create Vehicle
     static async create(req: Request, res: Response) {
         try {
             const vehicle = await VehicleService.createVehicle(req.body);
@@ -12,7 +11,6 @@ export class VehicleController {
         }
     }
 
-    // ✅ Get All Vehicles
     static async getAll(req: Request, res: Response) {
         try {
             const vehicles = await VehicleService.getAllVehicles();
@@ -22,7 +20,6 @@ export class VehicleController {
         }
     }
 
-    // ✅ Get Vehicle by ID
     static async getById(req: Request, res: Response) {
         try {
             const vehicle = await VehicleService.getVehicleById(req.params.id);
@@ -33,7 +30,6 @@ export class VehicleController {
         }
     }
 
-    // ✅ Update Vehicle
     static async update(req: Request, res: Response) {
         try {
             const vehicle = await VehicleService.updateVehicle(req.params.id, req.body);
@@ -43,7 +39,6 @@ export class VehicleController {
         }
     }
 
-    // ✅ Delete Vehicle
     static async delete(req: Request, res: Response) {
         try {
             await VehicleService.deleteVehicle(req.params.id);

@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { MonitoringService } from "../service/MonitoringService";
 
 export class MonitoringController {
-    // ✅ Create Monitoring Entry
+
     static async create(req: Request, res: Response) {
         try {
             const monitoring = await MonitoringService.createMonitoring(req.body);
@@ -12,7 +12,6 @@ export class MonitoringController {
         }
     }
 
-    // ✅ Get All Monitoring Entries
     static async getAll(req: Request, res: Response) {
         try {
             const monitoringEntries = await MonitoringService.getAllMonitoring();
@@ -22,7 +21,6 @@ export class MonitoringController {
         }
     }
 
-    // ✅ Get Monitoring Entry by ID
     static async getById(req: Request, res: Response) {
         try {
             const monitoring = await MonitoringService.getMonitoringById(req.params.id);
@@ -33,7 +31,6 @@ export class MonitoringController {
         }
     }
 
-    // ✅ Update Monitoring Entry
     static async update(req: Request, res: Response) {
         try {
             const monitoring = await MonitoringService.updateMonitoring(req.params.id, req.body);
@@ -43,7 +40,6 @@ export class MonitoringController {
         }
     }
 
-    // ✅ Delete Monitoring Entry
     static async delete(req: Request, res: Response) {
         try {
             await MonitoringService.deleteMonitoring(req.params.id);
